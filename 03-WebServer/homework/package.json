@@ -5,6 +5,13 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "nodemon": "^2.0.18",
     "request": "^2.88.2"
+  },
+  "scripts": {
+    "start": "node ./showByName/app.js",
+    "dev2": "nodemon ./Beatles/app.js",
+    "dev1": "nodemon ./showByName/app.js"
   }
 }
+

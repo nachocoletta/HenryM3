@@ -22,3 +22,55 @@ var beatles=[{
   profilePic:"http://cp91279.biography.com/BIO_Bio-Shorts_0_Ringo-Starr_SF_HD_768x432-16x9.jpg"
 }
 ]
+
+
+http.createServer( function(req, res){ 
+  if( req.url === '/api'){ //Si la URL es / devolvemos el HTML
+    res.writeHead(200, { 'Content-Type':'application/json' }) //Vamos a devolver texto en formato JSON
+    res.end( JSON.stringify(beatles) ); //Antes de enviar el objeto, debemos parsearlo y transformarlo a un string JSON
+
+	}else if(req.url === "/api/John%20Lennon")
+  {
+    res.writeHead(200, { 'Content-Type':'application/json' });
+    for (const key in beatles) {
+      for(const key1 in beatles[key]){
+        console.log(`${beatles[key][key1]}`);
+        console.log(`${key} ${beatles[key][key1]}`);
+      }
+    }
+    res.end( JSON.stringify(beatles[0]) );
+  }else if(req.url === "/api/Paul%20McCartney")
+  {
+    res.writeHead(200, { 'Content-Type':'application/json' });
+    for (const key in beatles) {
+      for(const key1 in beatles[key]){
+        console.log(`${beatles[key][key1]}`);
+      }
+    }
+    res.end( JSON.stringify(beatles[1]) );
+  }else if(req.url === "/api/John%20Lennon")
+  {
+    res.writeHead(200, { 'Content-Type':'application/json' });
+    for (const key in beatles) {
+      for(const key1 in beatles[key]){
+        console.log(`${beatles[key][key1]}`);
+      }
+    }
+    res.end( JSON.stringify(beatles[0]) );
+  }else if(req.url === "/api/John%20Lennon")
+  {
+    res.writeHead(200, { 'Content-Type':'application/json' });
+    for (const key in beatles) {
+      for(const key1 in beatles[key]){
+        console.log(`${beatles[key][key1]}`);
+      }
+    }
+    res.end( JSON.stringify(beatles[0]) );
+  }else{
+		res.writeHead(404); //Ponemos el status del response a 404: Not Found
+		res.end(); //No devolvemos nada más que el estado.
+  }
+
+	
+
+}).listen(1337, '127.0.0.1');
